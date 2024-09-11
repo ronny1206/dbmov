@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchMovies = createAsyncThunk(
   'search/fetchMovies',
   async (searchTerm) => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=27d81f94&s=${searchTerm}`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=27d81f94&s=${searchTerm}`);
     const data = await response.json();
     return data.Search || [];
   }
@@ -14,7 +14,7 @@ export const fetchMovies = createAsyncThunk(
 export const fetchMovieDetails = createAsyncThunk(
   'search/fetchMovieDetails',
   async (movieId) => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=27d81f94&i=${movieId}`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=27d81f94&i=${movieId}`);
     const data = await response.json();
     return data;
   }
